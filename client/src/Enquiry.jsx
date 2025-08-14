@@ -22,7 +22,7 @@ export default function Enquiry() {
         e.preventDefault();
 
         if (formData._id) {
-            axios.put(`http://localhost:8000/api/web/enquiry/update/${formData._id}`, formData)
+            axios.put(`https://get-in-touch-1bwy.onrender.com/api/web/enquiry/update/${formData._id}`, formData)
                 .then((res) => {
                     console.log(res.data);
                     toast.success(`${formData.name}'s info updated successfully...`);
@@ -37,7 +37,7 @@ export default function Enquiry() {
                     viewAllEnquiries()
                 })
         } else {
-            axios.post("http://localhost:8000/api/web/enquiry/insert", formData)
+            axios.post("https://get-in-touch-1bwy.onrender.com/api/web/enquiry/insert", formData)
                 .then((res) => {
                     console.log(res.data);
                     toast.success(`Hey ${formData.name} we are in touch now..`);
@@ -54,7 +54,7 @@ export default function Enquiry() {
     }
 
     let viewAllEnquiries = () => {
-        axios.get("http://localhost:8000/api/web/enquiry/view")
+        axios.get("https://get-in-touch-1bwy.onrender.com/api/web/enquiry/view")
             .then((res) => {
                 return res.data
             }).then((finalData) => {

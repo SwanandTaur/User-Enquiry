@@ -14,7 +14,7 @@ export default function EnquiryList({ data, getData, swal, setFormData }) {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:8000/api/web/enquiry/delete/${delid}`)
+                axios.delete(`https://get-in-touch-1bwy.onrender.com/api/web/enquiry/delete/${delid}`)
                     .then((res) => {
                         toast.success(`${name}'s info deleted successfully`)
                         getData()
@@ -26,7 +26,7 @@ export default function EnquiryList({ data, getData, swal, setFormData }) {
     }
 
     let editData = (edid) => {
-        axios.get(`http://localhost:8000/api/web/enquiry/singleUser/${edid}`)
+        axios.get(`https://get-in-touch-1bwy.onrender.com/api/web/enquiry/singleUser/${edid}`)
         .then((res)=>{
             let data = res.data
             setFormData(data.enquiry)
