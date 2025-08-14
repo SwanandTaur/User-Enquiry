@@ -11,10 +11,10 @@ myApp.use(express.json());
 
 myApp.use("/api/web/enquiry/",enquiryRouter);
 
-mongoose.connect(process.env.dbUrl).then(()=>{
+mongoose.connect(process.env.MONGODB_URI).then(()=>{
     console.log("Connected to mongodb");
     myApp.listen(process.env.PORT || 3000, ()=>{
-        console.log("server is running at port ",process.env.Port); 
+        console.log("server is running at port ",process.env.PORT); 
     })
 }).catch((err)=>{
     console.log("Something went wrong",err);
